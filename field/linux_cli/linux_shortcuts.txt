@@ -1,0 +1,10 @@
+CTRL + R to look in the history
+CTRL + A to go the beginnging of the line
+CTRL + E to go to the end of the line
+CTRL + W to delete the last word
+!! is used to edit the last command 
+
+pidof to have the process ID 
+pushd and popd, tldr
+cd - go back to the previous directory
+CTRL + L to clear the terminal
