@@ -21,9 +21,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 # The three core commands in powershell are:
 
 Get-Command                                  # see a list of all command
-
 Get-Help                                     # get help for any command
-
 Get-Member                                   # gets the members, the properties and methods, of objects
 ```
 
@@ -32,13 +30,21 @@ Get-Member                                   # gets the members, the properties 
 ```powershell
 
 Get-Location                                 # display working directory
-
 Get-ChildItem                                # display directory's content
-
 Set-Location                                 # Move to a specific directory
 ```
 
-- File operations.
+## File operations
+
+```powershell
+
+New-Item                                     # create new file
+Get-Content                                  # display file content
+Copy-Item                                    # copy file
+Move-Item                                    # move file
+Remove-Item                                  # remove file
+```
+
 - Permissions.
 - Package Management.
 - Environment Variables.
