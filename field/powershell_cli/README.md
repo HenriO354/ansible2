@@ -5,9 +5,10 @@ Windows operating system but can also run on linux and macOs.
 Unlike *most shells that only accept and return text*, Powershell accepts and 
 return **.NET objects**.
 
-## Quick start
+# Quick start
 
 ```powershell
+
 # Check powershell version
 $PSVersionTable
 
@@ -26,7 +27,17 @@ Get-Help                                     # get help for any command
 Get-Member                                   # gets the members, the properties and methods, of objects
 ```
 
-- Navigation.
+## Navigation
+
+```powershell
+
+Get-Location                                 # display working directory
+
+Get-ChildItem                                # display directory's content
+
+Set-Location                                 # Move to a specific directory
+```
+
 - File operations.
 - Permissions.
 - Package Management.
