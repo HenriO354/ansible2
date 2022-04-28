@@ -45,6 +45,17 @@ Move-Item                                    # move file
 Remove-Item                                  # remove file
 ```
 
-- Permissions.
-- Package Management.
-- Environment Variables.
+## Permissions
+
+```powershell
+
+Get-Acl
+Set-Acl
+RunAs
+```
+
+## Package Management
+
+
+
+## Environment Variables.
