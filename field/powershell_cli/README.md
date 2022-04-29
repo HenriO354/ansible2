@@ -71,9 +71,57 @@ $Admin = New-Object -TypeName System.Security.Principal.NTAccount -ArgumentList 
 $Acl.SetOwner($Admin)                                 # Update the in-memory ACL
 $Acl.Owner
 Set-Acl -Path .\myfile.txt -AclObject $Acl            # make changes persistent
+
+# Check file permission
+$Acl.Access
 ```
 
 ## Package Management
+
+Open PowerShell as administrator.
+
+```powershell
+
+# Installing the PSWindowsUpdate Module
+Install-Module -Name PSWindowsUpdate -Force
+
+# Import PSWindowsUpdate Module
+Import-Module PSWindowsUpdate
+
+# Check all available command for PSWindowsUpdate module
+Get-Command -Module PSWindowsUpdate
+
+# Checking for Available Windows Updates
+Get-WindowsUpdate
+
+# show the list of available update services
+Get-WUServiceManager
+
+ServiceID                            IsManaged IsDefault Name
+---------                            --------- --------- ----
+7971f918-a847-4430-9279-4a52d1efe18d False     True      Microsoft Update
+8b24b027-1dee-babb-9a95-3517dfb9c552 False     False     DCat Flighting Prod
+855e8a7c-ecb4-4ca3-b045-1dfa50104289 False     False     Windows Store (DCat Prod)
+9482f4b4-e343-43b6-b170-9a65bc822c77 False     False     Windows Update
+
+# Install chocolatey
+Install-Package -Name Chocolatey
+
+# Check all packages and modules installed
+Get-Package
+
+Name                           Version          Source                           ProviderName
+----                           -------          ------                           ------------
+chocolatey                     0.0.79           https://www.powershellgallery.c… PowerShellGet
+PSWindowsUpdate                2.2.0.3          https://www.powershellgallery.c… PowerShellGet
+
+# Install VLC package from Chocolatey
+choco install vlc
+
+# Uninstall VLC
+choco uninstall vlc -y
+
+```
 
 
 
