@@ -48,10 +48,29 @@ Remove-Item                                  # remove file
 ## Permissions
 
 ```powershell
+# create a file
+New-Item -Path .\myfile.txt -Value 'Hello World'
 
-Get-Acl
-Set-Acl
-RunAs
+# Check ownership
+$Acl = Get-Acl -Path .\myfile.txt
+$Acl.Owner
+
+# Check group
+$Acl.Group
+
+# Run as administrator
+start-process powershell -verb runas
+
+# Enable administrator account
+Get-LocalUser -Name Administrator | Enable-LocalUser
+
+# Define the owner account
+$Admin = New-Object -TypeName System.Security.Principal.NTAccount -ArgumentList 'BUILTIN\Administrators'
+
+# Change the file owner to the built-in administrator
+$Acl.SetOwner($Admin)                                 # Update the in-memory ACL
+$Acl.Owner
+Set-Acl -Path .\myfile.txt -AclObject $Acl            # make changes persistent
 ```
 
 ## Package Management
