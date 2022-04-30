@@ -123,6 +123,160 @@ choco uninstall vlc -y
 
 ```
 
+## Century Game
+
+This is a powershell training. There are 16 levels (from 0 to 15), for each level
+you need to connect to remote server via SSH. Then follow some instructions that
+can be found in this [link](https://underthewire.tech/century).  
+The credentials for the level 0 are provided. But you need to successfully complete
+the previous level to get credentials for the next level.
+
+### Century 1 -> 2
+
+```powershell
+
+PS C:\users\century1\desktop> $PSVersionTable.BuildVersion
+
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+10     0      14393  4583    
+```
+password=10.0.14393.4583
+
+### Century 2 -> 3
+
+```powershell
+
+PS C:\users\century2\desktop> dir
 
 
-## Environment Variables.
+    Directory: C:\users\century2\desktop
+
+
+Mode                LastWriteTime         Length Name                                                  
+----                -------------         ------ ----                                                  
+-a----        8/30/2018   3:29 AM            693 443 
+```
+password=invoke-webrequest443
+
+### Century 3 -> 4
+
+```powershell
+
+PS C:\users\century3\desktop> (Get-Item -File).Count                                                            
+123
+```
+password=123
+
+### Century 4 -> 5
+
+```powershell
+
+PS C:\users\century4\desktop> dir
+
+
+    Directory: C:\users\century4\desktop
+
+
+Mode                LastWriteTime         Length Name                                                  
+----                -------------         ------ ----                                                  
+d-----         2/8/2022  10:35 PM                Can You Open Me                                       
+
+
+PS C:\users\century4\desktop> dir '.\Can You Open Me'
+
+
+    Directory: C:\users\century4\desktop\Can You Open Me
+
+
+Mode                LastWriteTime         Length Name                                                  
+----                -------------         ------ ----                                                  
+-a----         2/8/2022  10:35 PM             24 5548  
+```
+password=5548
+
+### Century 5 -> 6
+
+```powershell
+
+PS C:\users\century5\desktop> dir
+
+
+    Directory: C:\users\century5\desktop
+
+
+Mode                LastWriteTime         Length Name                                                  
+----                -------------         ------ ----                                                  
+-a----        8/30/2018   3:29 AM             54 3347  
+```
+password=underthewire3347
+
+### Century 6 -> 7
+
+```powershell
+
+PS C:\users\century6\desktop> (Get-ChildItem -Directory).Count                                          
+197
+```
+password=197
+
+### Century 7 -> 8
+
+```powershell
+
+PS C:\users\century7\desktop> Get-ChildItem -Path 'C:\users\century7' -Filter *readme* -Recurse
+
+
+    Directory: C:\users\century7\Downloads
+
+
+Mode                LastWriteTime         Length Name                                                  
+----                -------------         ------ ----                                                  
+-a----        8/30/2018   3:29 AM              7 Readme.txt                                            
+-a----        2/12/2022   8:59 PM              2 Readme2.txt                                           
+
+
+PS C:\users\century7\desktop> Get-Content -Path 'C:\users\century7\Downloads\Readme.txt'
+7points
+```
+password=7points
+
+### Century 8 -> 9
+
+```powershell
+
+PS C:\users\century8\desktop> dir
+
+
+    Directory: C:\users\century8\desktop
+
+
+Mode                LastWriteTime         Length Name                                                  
+----                -------------         ------ ----                                                  
+-a----        8/30/2018   3:33 AM          15858 unique.txt                                            
+
+
+PS C:\users\century8\desktop> (Get-Content .\unique.txt).Length
+696
+```
+password=696
+
+### Century 9 -> 10
+
+```powershell
+
+PS C:\users\century9\desktop> dir
+
+
+    Directory: C:\users\century9\desktop
+
+
+Mode                LastWriteTime         Length Name                                                  
+----                -------------         ------ ----                                                  
+-a----        8/30/2018   3:34 AM           2131 Word_File.txt                                         
+
+
+PS C:\users\century9\desktop> (Get-Content .\Word_File.txt).Split(' ')[160]
+pierid
+```
+password=pierid
