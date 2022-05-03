@@ -40,8 +40,17 @@ model.
 | SYN | Used to initiate and establish a connection. It also helps you to synchronize sequence numbers between devices |
 | SYN_ACK | SYN message from local device and ACK of the earlier packet |
 | ACK | Helps to confirm to the other side that it has received the SYN |
+| FIN | Used to terminate a connection |
 
-### 7. Explain how a connection is terminated, in other words, explain the "4-way disconnect" process ?
+### 4. Explain how a connection is terminated, in other words, explain the "4-way disconnect" process ?
+
+![Connection Termination](images/termination.png)
+
+When the data stream transportation is over, the TCP connection needs to be 
+terminate safely.For that reason four things need to happen:
+
+- Each node has send a FIN flag to its peer (that’s two things, one FIN in each direction)
+- Each node has received a ACK flag of its own FIN flag from its peer (that’s two things)
 
 ### 8. Explain what are the "sequence number" and "acknowledgment number" in TCP
 
