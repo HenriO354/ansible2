@@ -94,11 +94,17 @@ It's good for applications that require reliability.
 
 ### Which systems (i.e. IP addresses) are involved ?
 
-Two devices are involved and theirs IPs are: `98.114.205.102` and `192.150.11.111`
+Two devices are involved and theirs IPs are: `98.114.205.102` (source) and `192.150.11.111` (destination)
 
-### What can you find out about the attacking host (e.g., where is it located) ? 
+### What can you find out about the attacking host (e.g., where is it located) ?
+
+Thanks to this [website](https://iplocation.com/), we found the following location: 
+
+![Location](images/ip_location.png)
 
 ### How many TCP sessions are contained in the dump file?
+
+
 
 ### How long did it take to perform the attack?
 
