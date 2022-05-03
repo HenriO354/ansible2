@@ -14,13 +14,22 @@ model.
 
 ### 1. What are the differences between the OSI model and the TCP/IP model ?
 
-### 2. How many layers do these two models have ?
+|               OSI Model                |                TCP/IP                 |
+|:--------------------------------------:|:-------------------------------------:|
+| stands for Open System Interconnection | stands for Transmission Control Protocol |
+| developed by ISO | developed by ARPANET |
+| It consists of 7 layers | It consists of 4 layers |
+| Based on a vertical approach | Based on a horizontal approach |
+| Less used or used as reference | highly used |
+| Generic protocol used as a communication gateway between the network and the end user | Standard protocol that lead to the development of internet |
 
-### 3. What do the acronyms TCP and IP refer to ?
+### 2. [List the different layers of the TCP/IP model](https://www.guru99.com/difference-tcp-ip-vs-osi-model.html)
 
-### 4. List the different layers of the TCP/IP model.
+![TCP-IP](images/tcp_ip.png)
 
-### 5. Give some examples of protocols and indicate which one of TCP/IP model layer they refer to.
+### 5. [Give some examples of protocols and indicate which one of TCP/IP model layer they refer to](https://docs.oracle.com/cd/E19455-01/806-0916/ipov-10/index.html)
+
+![Protocols](images/protocols.png)
 
 ### 6. Explain how a connection gets established, in other words, explain the "3-way handshake" process ?
 
