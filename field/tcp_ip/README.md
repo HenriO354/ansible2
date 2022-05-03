@@ -68,11 +68,10 @@ It's good for applications that require reliability.
 
 ### 7. What are TCP ports? How many of them are they? What are the three main categories of TCP Ports (with there associated range)?
 
+|   Port                              |   Description |
 |:------------------------------------|:---------------------------------------|
-| TCP Port | An integer that represents or identifies an application. It allows
-establishing a connection or a circuit between applications on both sides |
-|Well-known ports | Identify most common applications and services such as HTTP,
-HTTPS, SSH, ... |
+| TCP Port | An integer that represents or identifies an application. It allows establishing a connection or a circuit between applications on both sides |
+|Well-known ports | Identify most common applications and services such as HTTP, HTTPS, SSH, ... |
 | Registered ports |  used for the user processes |
 | Dynamic ports | Another name of the dynamic port is ephemeral ports. These port numbers are assigned to the client application dynamically when a client creates a connection |
 
