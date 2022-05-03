@@ -52,11 +52,31 @@ terminate safely.For that reason four things need to happen:
 - Each node has send a FIN flag to its peer (that’s two things, one FIN in each direction)
 - Each node has received a ACK flag of its own FIN flag from its peer (that’s two things)
 
-### 8. Explain what are the "sequence number" and "acknowledgment number" in TCP
+### 5. Explain what are the "sequence number" and "acknowledgment number" in TCP
 
-### 9. What is the fundamental difference between TCP and UDP ?
+When the sender is ready to send data. It organizes data into different segment.
+It assignes sequence number to each segment. Thoses sequence numbers are ordered
+and identified a specific segment.  
+So the receiver sends an acknowledgment number to let the sender know that, he 
+receives up to segment N and he's waiting for the segment N + 1.
 
-### 10. What are TCP ports? How many of them are they? What are the three main categories of TCP Ports (with there associated range)?
+### 6. What is the fundamental difference between TCP and UDP ?
+
+**TCP:** Makes sure that packet has reach the destination otherwise resend it.
+It's good for applications that require reliability. 
+**UDP:** Doesn't not ensure delivery and is used for applications that are sensible to delay instead of reliability.
+
+### 7. What are TCP ports? How many of them are they? What are the three main categories of TCP Ports (with there associated range)?
+
+|:------------------------------------|:---------------------------------------|
+| TCP Port | An integer that represents or identifies an application. It allows
+establishing a connection or a circuit between applications on both sides |
+|Well-known ports | Identify most common applications and services such as HTTP,
+HTTPS, SSH, ... |
+| Registered ports |  used for the user processes |
+| Dynamic ports | Another name of the dynamic port is ephemeral ports. These port numbers are assigned to the client application dynamically when a client creates a connection |
+
+![Port Range](images/ports.png)
 
 ### 11. Provide three examples of well-know port numbers and tell to which Application layer protocol they refer to
 
