@@ -96,6 +96,8 @@ It's good for applications that require reliability.
 
 Two devices are involved and theirs IPs are: `98.114.205.102` (source) and `192.150.11.111` (destination)
 
+![IPs](images/IPs.png)
+
 ### What can you find out about the attacking host (e.g., where is it located) ?
 
 Thanks to this [website](https://iplocation.com/), we found the following location: 
@@ -105,10 +107,13 @@ Thanks to this [website](https://iplocation.com/), we found the following locati
 ### How many TCP sessions are contained in the dump file?
 
 
-
 ### How long did it take to perform the attack?
 
 ### Which operating system was targeted by the attack? And which service? Which vulnerability?
+
+**OS:** Windows  
+**Service:** Server Message Block (SMB) via port 445.  
+**Vulnerability:** Remote code execution vulnerability.
 
 ### Can you sketch an overview of the general actions performed by the attacker? 
 
