@@ -77,10 +77,18 @@ It's good for applications that require reliability.
 
 ![Port Range](images/ports.png)
 
-### 11. Provide three examples of well-know port numbers and tell to which Application layer protocol they refer to
+### 8. Provide three examples of well-know port numbers and tell to which Application layer protocol they refer to
 
-### 12. Explain the concept of TCP packets and how they are build over the layer flow.
+| PORT NUMBER | TRANSPORT PROTOCOL | SERVICE NAME  |
+|:------------|:-------------------|:-----------------------------|
+| 20, 21      |    TCP             | File Transfer Protocol (FTP) |
+| 22          |  TCP, UDP          | Secure Shel (SSH)            |
+| 23          |     TCP            | Telnet                       |
+| 80          |     TCP            | HyperText Transfer Protocol (HTTP) |
 
+### 9. [Explain the concept of TCP packets and how they are build over the layer flow](https://afteracademy.com/blog/what-is-data-encapsulation-and-de-encapsulation-in-networking)
+
+![Encapsulation](images/encapsulation.png)
 
 ## Task 2: analysing a suspicious piece of network traffic captured in a pcap file
 
