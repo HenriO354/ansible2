@@ -15,7 +15,7 @@ model.
 ### 1. What are the differences between the OSI model and the TCP/IP model ?
 
 |               OSI Model                |                TCP/IP                 |
-|:--------------------------------------:|:-------------------------------------:|
+|:---------------------------------------|:--------------------------------------|
 | stands for Open System Interconnection | stands for Transmission Control Protocol |
 | developed by ISO | developed by ARPANET |
 | It consists of 7 layers | It consists of 4 layers |
@@ -27,11 +27,19 @@ model.
 
 ![TCP-IP](images/tcp_ip.png)
 
-### 5. [Give some examples of protocols and indicate which one of TCP/IP model layer they refer to](https://docs.oracle.com/cd/E19455-01/806-0916/ipov-10/index.html)
+### 3. [Give some examples of protocols and indicate which one of TCP/IP model layer they refer to](https://docs.oracle.com/cd/E19455-01/806-0916/ipov-10/index.html)
 
 ![Protocols](images/protocols.png)
 
-### 6. Explain how a connection gets established, in other words, explain the "3-way handshake" process ?
+### 3. [Explain how a connection gets established, in other words, explain the "3-way handshake" process ?](https://www.guru99.com/tcp-3-way-handshake.html)
+
+![Handshake](images/handshake.png)
+
+|                  Message               |            Description              |
+|:---------------------------------------|:------------------------------------|
+| SYN | Used to initiate and establish a connection. It also helps you to synchronize sequence numbers between devices |
+| SYN_ACK | SYN message from local device and ACK of the earlier packet |
+| ACK | Helps to confirm to the other side that it has received the SYN |
 
 ### 7. Explain how a connection is terminated, in other words, explain the "4-way disconnect" process ?
 
