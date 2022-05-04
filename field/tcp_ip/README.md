@@ -106,15 +106,29 @@ Thanks to this [website](https://iplocation.com/), we found the following locati
 
 ### How many TCP sessions are contained in the dump file?
 
+```bash
+
+$ tcpdump -nr attack-trace.pcap 'tcp[tcpflags] & (tcp-syn|tcp-ack) = (tcp-syn|tcp-ack)' | wc -l
+reading from file attack-trace.pcap, link-type EN10MB (Ethernet), snapshot length 65535
+5
+```
 
 ### How long did it take to perform the attack?
 
+In wireshark GUI, go to Statistics > Capture File properties
+
+![duration](images/duration.png)
+
 ### Which operating system was targeted by the attack? And which service? Which vulnerability?
+
+![OS](images/os.png)
 
 **OS:** Windows  
 **Service:** Server Message Block (SMB) via port 445.  
 **Vulnerability:** Remote code execution vulnerability.
 
-### Can you sketch an overview of the general actions performed by the attacker? 
+### Can you sketch an overview of the general actions performed by the attacker?
+
+![attack](images/attack.png)
 
 ### Which are the protocols involved? What can you tell about the payload?
