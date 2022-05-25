@@ -1,0 +1,64 @@
+version: '3.9'
+
+services:
+  # MySQL service
+  db:
+    image: mysql
+    container_name: mysql
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init-db:/docker-entrypoint-initdb.d
+    restart: always
+    env_file:
+      - database.env
+    networks:
+      - wp-dp-site
+  # Wordpress service
+  wp:
+    image: wordpress
+    container_name: wordpress
+    # ports:
+    #  - '80:80'
+    restart: always
+    volumes:
+      - wp_data:/var/www/html
+    env_file:
+      - wordpress.env
+    networks:
+      - wp-dp-site
+    depends_on:
+      - db
+  # drupal service
+  dp:
+    image: drupal
+    container_name: drupal
+    # ports:
+    #  - '80:80'
+    restart: always
+    volumes:
+      - dp_data:/var/www/html
+    networks:
+      - wp-dp-site
+    depends_on:
+      - db
+  # nginx service
+  webserver:
+    image: nginx
+    container_name: proxy
+    restart: always
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    ports:
+      - 80:80
+    networks:
+      - wp-dp-site
+    depends_on:
+      - wordpress
+      - drupal
+
+networks:
+  wp-dp-site:
+volumes:
+  db_data:
+  dp_data:
+  wp_data:

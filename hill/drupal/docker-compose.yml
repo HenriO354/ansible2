@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  # MySQL service
+  db:
+    image: mysql
+    container_name: mysql_db
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    env_file:
+      - database.env
+    networks:
+      - dpsite
+  # drupal service
+  drupal:
+    build: .
+    ports:
+     - '8080:80'
+    restart: always
+    volumes:
+      - dp_data:/var/www/html
+    networks:
+      - dpsite
+    depends_on:
+      - db
+
+networks:
+  dpsite:
+volumes:
+  db_data:
+  dp_data:

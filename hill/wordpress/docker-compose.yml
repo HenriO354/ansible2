@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  # MySQL service
+  db:
+    image: mysql
+    container_name: mysql
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    env_file:
+      - database.env
+    networks:
+      - wpsite
+  # Wordpress service
+  wordpress:
+    build: .
+    container_name: wordpress
+    ports:
+     - '8080:80'
+    restart: always
+    volumes:
+      - wp_data:/var/www/wordpress
+    env_file:
+      - wordpress.env
+    networks:
+      - wpsite
+    depends_on:
+      - db
+  
+networks:
+  wpsite:
+volumes:
+  db_data:
+  wp_data:
