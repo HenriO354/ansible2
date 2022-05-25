@@ -1,0 +1,11 @@
+/home/becode/devops/dockerhub/jgsu-spring-petclinic/src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java
+/home/becode/devops/dockerhub/jgsu-spring-petclinic/src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java
+/home/becode/devops/dockerhub/jgsu-spring-petclinic/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java
+/home/becode/devops/dockerhub/jgsu-spring-petclinic/src/test/java/org/springframework/samples/petclinic/vet/VetTests.java
+/home/becode/devops/dockerhub/jgsu-spring-petclinic/src/test/java/org/springframework/samples/petclinic/service/EntityUtils.java
+/home/becode/devops/dockerhub/jgsu-spring-petclinic/src/test/java/org/springframework/samples/petclinic/PetclinicIntegrationTests.java
+/home/becode/devops/dockerhub/jgsu-spring-petclinic/src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java
+/home/becode/devops/dockerhub/jgsu-spring-petclinic/src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java
+/home/becode/devops/dockerhub/jgsu-spring-petclinic/src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java
+/home/becode/devops/dockerhub/jgsu-spring-petclinic/src/test/java/org/springframework/samples/petclinic/system/CrashControllerTests.java
+/home/becode/devops/dockerhub/jgsu-spring-petclinic/src/test/java/org/springframework/samples/petclinic/model/ValidatorTests.java

@@ -1,2 +1,5 @@
 # VScode
 .vscode/
+# target folder except .jar file
+target/*
+!tartget/*.jar
