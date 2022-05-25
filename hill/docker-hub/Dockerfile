@@ -1,4 +1,4 @@
-FROM openjdk:11-alpine AS builder
+FROM openjdk:11
 
 WORKDIR /app
 COPY .mvn/ ./.mvn
@@ -6,8 +6,9 @@ COPY src ./src
 COPY mvnw pom.xml ./
 RUN ./mvnw package
 
-FROM openjdk:11-alpine
+# FROM openjdk:11
 
-WORKDIR /app
-COPY --from=builder /app/target/*.jar /app
+# WORKDIR /app
+# COPY --from=builder /app/target/*.jar /app
+
 ENTRYPOINT [ "java", "-jar", "target/*.jar" ]
