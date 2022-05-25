@@ -1,3 +1,13 @@
-FROM openjdk:11
-COPY target/*.jar app.jar
-ENTRYPOINT [ "java", "-jar", "/app.jar" ]
+FROM openjdk:11-alpine AS builder
+
+WORKDIR /app
+COPY .mvn/ ./.mvn
+COPY src ./src
+COPY mvnw pom.xml ./
+RUN ./mvnw package
+
+FROM openjdk:11-alpine
+
+WORKDIR /app
+COPY --from=builder /app/target/*.jar /app
+ENTRYPOINT [ "java", "-jar", "target/*.jar" ]
