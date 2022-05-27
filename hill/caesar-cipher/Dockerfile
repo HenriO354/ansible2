@@ -1,7 +1,12 @@
-FROM openjdk:14-jdk-alpine
+FROM openjdk:14-jdk-alpine as builder
 
 WORKDIR /app
 COPY . ./
 RUN ./gradlew build
 
-ENTRYPOINT ["java", "-jar", "build/libs/caesar-cipher.jar"]
+FROM openjdk:14-jdk-alpine
+
+WORKDIR /app
+COPY --from=builder /app/build/libs/caesar-cipher.jar /app/package.jar
+
+ENTRYPOINT ["java", "-jar", "package.jar"]
