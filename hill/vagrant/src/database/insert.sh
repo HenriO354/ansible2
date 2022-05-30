@@ -1,0 +1,1 @@
+mysql -ucogip -pcogippass cogip -e "INSERT INTO user(username,password,mode) VALUES('Michel','michelpassword','winner');"
