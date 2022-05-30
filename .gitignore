@@ -3,3 +3,5 @@
 # target folder except .jar file
 target/*
 !tartget/*.jar
+# vagrant
+.vagrant
