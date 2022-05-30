@@ -48,7 +48,7 @@ mysql -uroot -proot $DBNAME -e "INSERT INTO user(username,password,mode) VALUES(
 apt install -y php-mysql
 
 # Edit apache default config
-cp /var/wwww/html/000-default.conf /etc/apache2/sites-available/000-default.conf
+mv /var/wwww/html/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 # Restart Apache
 systemctl restart apache2
