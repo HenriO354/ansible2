@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  db: # this is the name of postgres service
+    image: mysql
+    container_name: mysql_container
+    env_file: 
+      # this file contain the secret credentials to connect to the database
+      - database.env
+    ports:
+      - '9906:3306'
+    restart: always # making sure that postgres will always run
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./src/database:/docker-entrypoint-initdb.d/:ro
+  php: # this is the name of jupyter lab service
+    build: .
+    container_name: php_apache
+    ports:
+      - '8080:80'
+    volumes:
+      - ./src:/var/www/html/
+    depends_on:
+      - db
+
+volumes:
+  mysql-data:
