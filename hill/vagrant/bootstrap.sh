@@ -43,6 +43,7 @@ apt install -y php libapache2-mod-php php-mysql > /dev/null 2>&1
 
 # Edit apache default config
 cp /var/www/html/config/000-default.conf /etc/apache2/sites-available/000-default.conf
+cp /var/www/html/config/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
 
 # Restart Apache
 service apache2 restart
