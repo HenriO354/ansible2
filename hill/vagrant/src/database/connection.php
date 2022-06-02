@@ -2,7 +2,7 @@
 
 function dbconnect(){
 
-    $hostname = "db";
+    $hostname = "localhost";
     $usernamedb = "cogip";
     $passworddb = "cogippass";
     $dbname = "cogip";
