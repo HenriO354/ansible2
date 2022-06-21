@@ -30,3 +30,7 @@ Finally, ssh into server without password.
 ## Running elevated ad-hoc commands
 
 ![Elevated Ad-hoc](images/elevated-adhoc.png)
+
+## Playbook
+
+![Playbook](images/playbook.png)
