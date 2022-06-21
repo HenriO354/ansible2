@@ -6,7 +6,6 @@
 
   - name: install apache, php and php support for apache
     apt:
-      update_cache: yes
       name:
         - apache2
         - libapache2-mod-php
