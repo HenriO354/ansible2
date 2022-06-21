@@ -29,8 +29,35 @@ Finally, ssh into server without password.
 
 ## Running elevated ad-hoc commands
 
+As you may know, running `apt update` command will fail for non root user but 
+`sudo apt update` will work for non root user with sudo privileges.  
+Ansible uses `become` flag to take care of that. `ask-become-pass` is used to
+ask for password. In this case the controlling machine and the servers should 
+have the same password.
+
 ![Elevated Ad-hoc](images/elevated-adhoc.png)
 
 ## Playbook
 
+Ad-hoc commands are not reusable and this defeats the purpose of ansible which 
+focus on tasks automation. For that reason playbooks are used to automate.
+
+Here is simple playbook with one task.
+
+```yaml
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install apache2 package
+    apt:
+      name: apache2
+```
+
 ![Playbook](images/playbook.png)
+
+As you can see changes have been made into servers. Apache2 server has been installed in both servers and are running. Let's check it out.
+
+![Apache](images/apache.png)
