@@ -61,3 +61,8 @@ Here is simple playbook with one task.
 As you can see changes have been made into servers. Apache2 server has been installed in both servers and are running. Let's check it out.
 
 ![Apache](images/apache.png)
+
+Running the same playbook again won't reinstall apache2 because Ansible keeps 
+track of the state.
+
+![Paybook](images/playbook2.png)
