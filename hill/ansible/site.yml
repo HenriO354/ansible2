@@ -7,6 +7,7 @@
   - name: update repository index
     apt:
       update_cache: yes
+      upgrade: dist
     when: ansible_distribution in ["Debian","Ubuntu"]
 
 - hosts: web_server
@@ -39,3 +40,26 @@
       name: mysql-server
       state: latest
     when: ansible_distribution in ["Debian","Ubuntu"]
+
+- hosts: workstation
+  become: true
+  tasks:
+
+  - name: update system
+    yum:
+      name: '*'
+      state: latest
+    when: ansible_distribution == "CentOS"
+
+  - name: install unzip
+    package:
+      name: unzip
+
+  - name: install terraform
+    unarchive:
+      src: https://releases.hashicorp.com/terraform/1.2.3/terraform_1.2.3_linux_amd64.zip
+      dest: /usr/local/bin
+      remote_src: yes
+      mode: 0755
+      owner: root
+      group: root
