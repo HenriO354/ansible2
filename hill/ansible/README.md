@@ -51,9 +51,14 @@ Here is simple playbook with one task.
   become: true
   tasks:
 
+  - name: update repository index
+    apt:
+      update_cache: yes
+
   - name: install apache2 package
     apt:
       name: apache2
+      state: latest
 ```
 
 ![Playbook](images/playbook.png)
