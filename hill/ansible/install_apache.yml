@@ -4,11 +4,12 @@
   become: true
   tasks:
 
-  - name: update repository index
+  - name: install apache, php and php support for apache
     apt:
       update_cache: yes
-
-  - name: install apache2 package
-    apt:
-      name: apache2
+      name:
+        - apache2
+        - libapache2-mod-php
+        - php
       state: latest
+    when: ansible_distribution in ["Debian","Ubuntu"]
