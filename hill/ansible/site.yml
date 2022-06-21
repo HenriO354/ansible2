@@ -1,0 +1,33 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update repository index
+    apt:
+      update_cache: yes
+    when: ansible_distribution in ["Debian","Ubuntu"]
+
+- hosts: web_server
+  become: true
+  tasks:
+
+  - name: install apache, php and php support for apache
+    apt:
+      name:
+        - apache2
+        - libapache2-mod-php
+        - php
+      state: latest
+    when: ansible_distribution in ["Debian","Ubuntu"]
+
+- hosts: db_server
+  become: true
+  tasks:
+
+  - name: install mysql
+    apt:
+      name: mysql-server
+      state: latest
+    when: ansible_distribution in ["Debian","Ubuntu"]
