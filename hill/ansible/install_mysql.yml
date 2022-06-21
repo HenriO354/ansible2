@@ -1,0 +1,12 @@
+---
+
+- hosts: db_server
+  become: true
+  tasks:
+
+  - name: install mysql
+    apt:
+      update_cache: yes
+      name: mysql-server
+      state: latest
+    when: ansible_distribution in ["Debian","Ubuntu"]
