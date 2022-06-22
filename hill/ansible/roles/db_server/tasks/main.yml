@@ -1,6 +1,6 @@
 - name: install mysql
   tags: db,mysql
   apt:
-    name: mysql-server
+    name: "{{ mysql_package_name }}"
     state: latest
   when: ansible_distribution in ["Debian","Ubuntu"]

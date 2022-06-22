@@ -1,9 +1,9 @@
 - name: install apache, php and php support for apache
   apt:
     name:
-      - apache2
-      - libapache2-mod-php
-      - php
+      - "{{ apache_package_name }}"
+      - "{{ php_support_apache }}"
+      - "{{ php_package_name }}"
     state: latest
   when: ansible_distribution in ["Debian","Ubuntu"]
 
