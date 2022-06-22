@@ -1,3 +1,5 @@
 apache_package_name: apache2
 php_support_apache: libapache2-mod-php
 php_package_name: php
+ssh_users: "vagrant"
+ssh_template_file: sshd_config_debian.j2
