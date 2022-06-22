@@ -1,0 +1,41 @@
+---
+
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: update repository index (CentOS)
+    tags: always
+    dnf:
+      update_cache: yes
+    changed_when: false
+    when: ansible_distribution == "CentOS"
+
+  - name: update repository index (Ubuntu, Debian)
+    tags: always
+    apt:
+      update_cache: yes
+    changed_when: false
+    when: ansible_distribution in ["Debian","Ubuntu"]
+
+#- hosts: all
+#  become: true
+#  roles:
+#    - base
+
+- hosts: web_server
+  become: true
+  roles:
+    - web_server
+
+- hosts: db_server
+  become: true
+  roles:
+    - db_server
+
+- hosts: workstation
+  become: true
+  roles:
+    - workstation
+
+
