@@ -18,10 +18,10 @@
     changed_when: false
     when: ansible_distribution in ["Debian","Ubuntu"]
 
-#- hosts: all
-#  become: true
-#  roles:
-#    - base
+- hosts: all
+  become: true
+  roles:
+    - base
 
 - hosts: web_server
   become: true
