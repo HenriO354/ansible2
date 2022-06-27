@@ -1,0 +1,18 @@
+vm_sdt_template:                    "BeCentral/vm/Templates/template-debian-10"
+vm_sdt_esxi_hostname:               "esxi4.becode.org"
+vcenter_hostname:                   "vc.becode.org"
+vcenter_username:                   "ombessa@becode.org"
+vcenter_password:                   'h)"uLSnNJ4?g[pv5'
+vcenter_datacenter:                 "BeCentral"
+vm_sdt_datastore:                   "datastore4"
+vm_sdt_cpu_num:                     "2"
+vm_sdt_hotadd_cpu:                  true
+vm_sdt_hotremove_cpu:               true
+vm_sdt_nested_virt:                 true
+vm_sdt_mem_size:                    "4096"
+vm_sdt_hotadd_memory:               true
+vm_sdt_memory_reservation_lock:     true
+vm_sdt_disk_size_gb:                "20"
+vm_sdt_network:                     "LAN"
+vm_sdt_folder:                      "LoveLace 8"
+vm_sdt_start_connected:             true

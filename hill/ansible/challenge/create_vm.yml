@@ -1,0 +1,45 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  collections:
+    - community.vmware
+
+  vars_files:
+    - ./vars/main.yaml
+
+  tasks:
+
+    - name: Create a virtual machine from a template
+      vmware_guest:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        validate_certs: no
+        folder: "{{ vm_sdt_folder }}"
+        esxi_hostname: "{{ vm_sdt_esxi_hostname }}"
+        datacenter: "{{ vcenter_datacenter }}"
+        name: vmsdt-ombessa-clone
+        state: poweredon
+        force: yes 
+        template: "{{ vm_sdt_template }}"
+        disk:
+        - size_gb: "{{ vm_sdt_disk_size_gb }}"
+          type: thin
+          datastore: "{{ vm_sdt_datastore }}"
+        hardware:
+          memory_mb: "{{ vm_sdt_mem_size }}"
+          num_cpus: "{{ vm_sdt_cpu_num }}"
+          memory_reservation_lock: "{{ vm_sdt_memory_reservation_lock }}"
+          scsi: paravirtual
+          hotadd_cpu: "{{ vm_sdt_hotadd_cpu }}"
+          hotremove_cpu: "{{ vm_sdt_hotremove_cpu }}"
+          hotadd_memory: "{{ vm_sdt_hotadd_memory }}"
+          nested_virt: "{{ vm_sdt_nested_virt }}"
+          boot_firmware: "efi"
+        networks:
+        - name: "{{ vm_sdt_network }}"
+        wait_for_ip_address: yes
+        customization:
+          hostname: "vmsdt-ombessa-clone"
+      delegate_to: localhost
