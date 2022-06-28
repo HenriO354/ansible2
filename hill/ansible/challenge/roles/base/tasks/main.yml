@@ -1,7 +1,7 @@
 - name: add sudoers file for ansible
     tags: sudoer
     copy:
-      src: ansible
+      src: "{{ ssh_user }}"
       dest: /etc/sudoers.d/ansible
       owner: root
       group: root
