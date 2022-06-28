@@ -1,8 +1,6 @@
 vm_sdt_template:                    "BeCentral/vm/Templates/template-debian-10"
 vm_sdt_esxi_hostname:               "esxi4.becode.org"
 vcenter_hostname:                   "vc.becode.org"
-vcenter_username:                   "ombessa@becode.org"
-vcenter_password:                   'h)"uLSnNJ4?g[pv5'
 vcenter_datacenter:                 "BeCentral"
 vm_sdt_datastore:                   "datastore4"
 vm_sdt_cpu_num:                     "2"
