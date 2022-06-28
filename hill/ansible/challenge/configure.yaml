@@ -21,8 +21,3 @@
   become: true
   roles:
     - web_server
-
-- hosts: localhost
-  become: true
-  roles:
-    - db_server
