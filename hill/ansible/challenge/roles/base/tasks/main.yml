@@ -1,11 +1,17 @@
-- name: add sudoers file for ansible
-  tags: sudoer
-  copy:
-    src: "{{ ssh_user }}"
-    dest: /etc/sudoers.d/ansible
-    owner: root
-    group: root
-    mode: 0440
+- name: add ssh public key for ansible
+  tags: always
+  authorized_key:
+    user: ansible
+    key: "{{ lookup('file', '/home/becode/.ssh/ansible.pub') }}"
+
+# - name: add sudoers file for ansible
+#   tags: sudoer
+#   copy:
+#     src: "{{ ssh_user }}"
+#     dest: /etc/sudoers.d/ansible
+#     owner: root
+#     group: root
+#     mode: 0440
 
 - name: generate sshd_config file from template
   tags: ssh

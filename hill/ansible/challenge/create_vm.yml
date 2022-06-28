@@ -4,6 +4,7 @@
   gather_facts: no
   collections:
     - community.vmware
+    - ansible.posix
 
   vars_files:
     - ./vars/main.yaml
