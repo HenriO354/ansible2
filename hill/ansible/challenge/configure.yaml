@@ -1,0 +1,28 @@
+---
+
+- hosts: localhost
+  connection: local
+  become: true
+  pre_tasks:
+
+  - name: update repository index (Ubuntu, Debian)
+    tags: always
+    apt:
+      update_cache: yes
+    changed_when: false
+    when: ansible_distribution in ["Debian","Ubuntu"]
+
+- hosts: localhost
+  become: true
+  roles:
+    - base
+
+- hosts: localhost
+  become: true
+  roles:
+    - web_server
+
+- hosts: db_server
+  become: true
+  roles:
+    - db_server
