@@ -22,7 +22,7 @@
   roles:
     - web_server
 
-- hosts: db_server
+- hosts: localhost
   become: true
   roles:
     - db_server
