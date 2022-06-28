@@ -1,0 +1,14 @@
+- name: install apache
+  apt:
+    name:
+      - "{{ apache_package_name }}"
+    state: latest
+  when: ansible_distribution in ["Debian","Ubuntu"]
+
+- name: copy default html file for webserver
+  copy:
+    src: index.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: 0644
