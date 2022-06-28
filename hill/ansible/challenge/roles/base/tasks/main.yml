@@ -1,0 +1,8 @@
+- name: add sudoers file for ansible
+    tags: always
+    copy:
+      src: ansible
+      dest: /etc/sudoers.d/ansible
+      owner: root
+      group: root
+      mode: 0440
