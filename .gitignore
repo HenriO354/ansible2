@@ -5,3 +5,5 @@ target/*
 !tartget/*.jar
 # vagrant
 .vagrant
+# ansible
+secret.yaml
