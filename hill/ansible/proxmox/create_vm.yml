@@ -1,0 +1,18 @@
+- hosts: localhost
+  gather_facts: no
+  collections:
+    - community.general
+
+  vars_files:
+    - ./vars.yml
+
+  tasks:
+
+    - name: Create a virtual machine from a template
+      proxmox_kvm:
+        node: "{{ node }}"
+        api_user: "{{ api_user }}"
+        api_password: "{{ api_password }}"
+        api_host: "{{ api_host }}"
+        clone: "{{ clone }}"
+        name: "{{ name }}"
