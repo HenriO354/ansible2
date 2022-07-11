@@ -6,4 +6,4 @@ target/*
 # vagrant
 .vagrant
 # ansible
-credentials.yaml
+credentials.*
