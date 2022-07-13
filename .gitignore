@@ -1,8 +1,11 @@
 # VScode
 .vscode/
-# target folder except .jar file
+# Maven
 target/*
 !tartget/*.jar
+# Gradle
+.gradle/
+build/
 # vagrant
 .vagrant
 # ansible
