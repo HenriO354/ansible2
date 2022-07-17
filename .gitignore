@@ -11,4 +11,4 @@ build/
 # ansible
 credentials.*
 # packer
-vars.pkr.hcl
+#vars.pkr.hcl
