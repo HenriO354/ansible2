@@ -34,6 +34,20 @@ created in the cluster. Instead, kubernetes provides another level of
 abstraction such as **deployment**.
 
 A deployment is a resource object in Kubernetes that provides declarative updates 
-to applications. A deployment allows you to describe an application's life cycle, 
+to applications. It allows you to describe an application's life cycle, 
 such as which images to use for the app, the number of pods there should be, and 
 the way in which they should be updated.
+
+A deployment allows you to declare a **desired state** and kubernetes will monitor
+and adjust the **current state** to look like the desired state.
+
+### Service
+
+A Service is an abstraction layer which defines a logical set of Pods and enables 
+external traffic exposure, load balancing and service discovery for those Pods.  
+It enables communication between various applications within and outside k8s
+cluster.  
+There different type of service such as:
+- ClusterIP (default)
+- NodePort
+- Loadbalancer
