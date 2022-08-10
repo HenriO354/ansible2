@@ -18,3 +18,13 @@ the system to it latest state after a disaster.
 ## Basic architecture
 
 ![Basic Architecture](images/k8s-architecture.png)
+
+## Basic Concepts
+
+### Pod
+A pod is the smallest unit of kubernetes cluster that you can interact with. 
+Usually there is one pod per application, a pod is then a container wrapper. 
+Each pod is its own self contained server with an IP address assigned by the 
+virtual network.
+
+### Service
