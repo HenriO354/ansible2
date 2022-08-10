@@ -47,7 +47,7 @@ A Service is an abstraction layer which defines a logical set of Pods and enable
 external traffic exposure, load balancing and service discovery for those Pods.  
 It enables communication between various applications within and outside k8s
 cluster.  
-There different type of service such as:
+There are different type of service such as:
 - ClusterIP (default)
 - NodePort
 - Loadbalancer
