@@ -1,8 +1,8 @@
 # VScode
 .vscode/
 # Maven
-target/*
-!tartget/*.jar
+target/
+# !tartget/*.jar
 # Gradle
 .gradle/
 build/

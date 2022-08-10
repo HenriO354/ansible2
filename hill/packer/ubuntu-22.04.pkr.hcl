@@ -30,7 +30,7 @@ source "proxmox-iso" "ubuntu-jammy" {
     
     # VM General Settings
     node = "${var.proxmox_node}"
-    vm_id = "102"
+    # vm_id = "102"
     vm_name = "ubuntu-jammy"
     template_description = "Ubuntu Server jammy Image"
 
@@ -73,15 +73,16 @@ source "proxmox-iso" "ubuntu-jammy" {
     cloud_init_storage_pool = "local-lvm"
 
     # PACKER Boot Commands
-    boot_command = [
-        "<esc><wait>",
-        "<down><down><down><end>",
-        "<bs><bs><bs><bs><wait>",
-        "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
-        "<f10><wait>"
-    ]
-    boot = "c"
     boot_wait = "5s"
+    boot_command = [
+        "c<wait>",
+        "linux /casper/vmlinuz --- autoinstall ds=\"nocloud-net;seedfrom=http://{{.HTTPIP}}:{{.HTTPPort}}/\"",
+        "<enter><wait>",
+        "initrd /casper/initrd",
+        "<enter><wait>",
+        "boot",
+        "<enter>"
+    ]
 
     # PACKER Autoinstall Settings
     http_directory = "http" 
@@ -99,7 +100,7 @@ source "proxmox-iso" "ubuntu-jammy" {
     ssh_private_key_file = "~/.ssh/ansible"
 
     # Raise the timeout, when installation takes longer
-    ssh_timeout = "20m"
+    ssh_timeout = "10m"
 }
 
 # Build Definition to create the VM Template
