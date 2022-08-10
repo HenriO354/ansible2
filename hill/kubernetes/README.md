@@ -27,4 +27,13 @@ Usually there is one pod per application, a pod is then a container wrapper.
 Each pod is its own self contained server with an IP address assigned by the 
 virtual network.
 
-### Service
+### Deployment
+
+Pods are the basic unit of computation in kubernetes, but they are not directly
+created in the cluster. Instead, kubernetes provides another level of 
+abstraction such as **deployment**.
+
+A deployment is a resource object in Kubernetes that provides declarative updates 
+to applications. A deployment allows you to describe an application's life cycle, 
+such as which images to use for the app, the number of pods there should be, and 
+the way in which they should be updated.
